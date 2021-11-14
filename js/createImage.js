@@ -9,9 +9,9 @@ export default class createImage {
             <img class="content-img" src="../medias/`+ photographerName +`/${image.image}" alt="${image.title}" />
             <div class="bottom">
                 <div>${image.title}</div>
-                <div class="like">
+                <div>
                     <strong>${image.likes}</strong>
-                    <i class="far fa-heart"></i>
+                    <i class="like empty-like far fa-heart" aria-label ="likes"></i>
                 </div>
             </div>
         </article>`;

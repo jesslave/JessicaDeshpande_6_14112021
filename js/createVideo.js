@@ -12,9 +12,9 @@ export default class createVideo {
             </video>
             <div class="bottom">
                 <div>${video.title}</div>
-                <div class="like">
+                <div>
                     <strong>${video.likes}</strong>
-                    <i class="far fa-heart"></i>
+                    <i class="like empty-like far fa-heart"></i>
                 </div>
             </div>
         </article>`;

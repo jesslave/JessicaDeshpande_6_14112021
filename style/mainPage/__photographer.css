@@ -105,6 +105,51 @@
     width: 20rem;
 }
 
+.like-counter {
+    bottom: 0;
+    right: 15%;
+    position: fixed;
+    display: flex;
+    background-color: #dba092;
+    width: 10rem;
+    justify-content: space-between;
+    padding: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+}
+
+.container {
+    display:flex;
+}
+
+.total-counter {
+    margin-right: 0.5rem;
+}
+
+.selection-container {
+    margin: 0 4rem 2rem 4rem;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.select {
+    margin-left: 1rem;
+    background-color: #901C1C;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+select > option {
+    height: 5rem;
+}
+
+.select-text {
+    margin-top: 0.5rem;
+}
+
+
 @media(max-width:1200px) {
 
     .media-content {
@@ -171,5 +216,13 @@
     .content-img {
         width:15rem;
         height:10rem;
+    }
+
+    .like-counter {
+        display: none;
+    }
+
+    .selection-container {
+        display: none;
     }
 }

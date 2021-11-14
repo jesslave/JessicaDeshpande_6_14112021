@@ -1,5 +1,7 @@
 import createImage from './createImage.js'
 import createVideo from './createVideo.js'
+import createCounter from './createCounter.js'
+import createSelect from './createSelect.js';
 
 export default class createProfile {
 
@@ -41,48 +43,48 @@ export default class createProfile {
                     //Insertion of the created article into the main
                     elt.innerHTML = elt.innerHTML + templateCard;
 
+                    //Insertion of the filter
+                    new createSelect().createSelect();
+
                     //Create a media section
                     let mediaSection = document.createElement('section');
                     mediaSection.id = "mediaContent";
                     mediaSection.classList.add("media-content")
 
+                    
+                    //We get the medias related to the photographer drom data
+                    let medias = data.media.filter(x => x.photographerId == idPhotographer);
+
                     //Create the content inside the section
-                    this.createPhotographerContent(data, idPhotographer, photographer.name, mediaSection);
+                    this.createPhotographerContent(medias, photographer, mediaSection, elt);
 
                     //Add the section to the main balise
                     elt.appendChild(mediaSection);
+
+                    new createCounter().addEventAddLike();
             }
 
     }
 
-    createPhotographerContent(data, idPhotographer, photographerName, mediaSection) {
+    createPhotographerContent(medias, photographer, mediaSection, mainElement) {            
 
-        //We get the medias related to the photographer drom data
-        let medias = data.media.filter(x => x.photographerId == idPhotographer);
-        console.log(medias);
+        //Total like counter
+        let counter = 0;
         medias.forEach(media => {
             //Image creation
             if (media.image != null) {
-                new createImage().createImage(media, photographerName, mediaSection);
+                counter += media.likes;
+                new createImage().createImage(media, photographer.name, mediaSection);
             }
             //Video Creation
             else if(media.video != null) {
-                new createVideo().createVideo(media, photographerName, mediaSection);
+                counter += media.likes;
+                new createVideo().createVideo(media, photographer.name, mediaSection);
             }
         })
 
+        //Create the counter info bellow the page
+        new createCounter().createCounter(counter, photographer.price, mainElement);
 
-
-
-
-
-
-
-
-
-
-
-
-        
     }
 }
