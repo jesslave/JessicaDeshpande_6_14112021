@@ -6,10 +6,7 @@ export default class createVideo {
 
         let templateVideo = `
         <article class="img-container" title="${video.title}">
-            <video class="content-img" controls />
-                <source src="../medias/`+ photographerName +`/${video.video}" alt="${video.title}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <video class="content-img" controls src="../medias/`+ photographerName +`/${video.video}" alt="${video.title}"></video>
             <div class="bottom">
                 <div>${video.title}</div>
                 <div>

@@ -1,6 +1,7 @@
 import createImage from './createImage.js'
 import createVideo from './createVideo.js'
 import createCounter from './createCounter.js';
+import createLightBox from './createLightBox.js';
 
 export default class orderDropdownEvent {
 
@@ -59,6 +60,8 @@ export default class orderDropdownEvent {
                 //Putting back like event
                 new createCounter().addEventAddLike();
             })
+            //Putting back lightbox events
+            new createLightBox().addLightboxEvents();
         });
 
         

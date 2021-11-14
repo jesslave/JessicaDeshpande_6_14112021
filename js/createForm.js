@@ -108,7 +108,7 @@ export default class createForm {
             }
             //Send result to logs and hide form
             else {
-            console.log("Prenom: " + firstNameInput.value + "Nom: " + lastNameInput.value + "Email: " + emailNameInput.value + "Message: " + msgNameInput.value );
+            console.log("Prenom: " + firstNameInput.value + " Nom: " + lastNameInput.value + " Email: " + emailNameInput.value + " Message: " + msgNameInput.value );
             event.target.parentElement.parentElement.style.display = "none"
 
             }

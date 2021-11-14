@@ -3,6 +3,7 @@ import createVideo from './createVideo.js'
 import createCounter from './createCounter.js'
 import createSelect from './createSelect.js';
 import createForm from './createForm.js';
+import createLightBox from './createLightBox.js';
 
 export default class createProfile {
 
@@ -62,7 +63,9 @@ export default class createProfile {
                     //Add the section to the main balise
                     elt.appendChild(mediaSection);
 
+                    //Add like and lightbox events
                     new createCounter().addEventAddLike();
+                    new createLightBox().addLightboxEvents();
 
             }
 
@@ -89,6 +92,8 @@ export default class createProfile {
         new createCounter().createCounter(counter, photographer.price, mainElement);
         //Create the form
         new createForm().createForm(photographer.name, mainElement);
+        //Create lightbox
+        new createLightBox().createLightBox(mainElement);
 
     }
 }
