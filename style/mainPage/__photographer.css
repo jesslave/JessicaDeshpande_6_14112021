@@ -6,7 +6,7 @@
     transform: scale(0.7);
 }
 
-.profileCard {
+.profile-card {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: #FAFAFA;
@@ -42,6 +42,10 @@
     margin-top: 2rem;
 }
 
+.profile-nav {
+    margin-bottom: 1rem;
+}
+
 .contact-button-top {
     margin: 2rem 0 1rem 1rem;
     width: 7rem;
@@ -73,19 +77,65 @@
     transform: scale(0.8);
 }
 
+.content-img {
+    border-radius: 5px;
+    width:20rem;
+    height:20rem;
+    object-fit:cover;
+}
+
+.media-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 4rem 2rem 4rem;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+}
+
+.img-container {
+    margin: 1rem;
+    text-align: center;
+}
+
+.bottom {
+    justify-content: space-between;
+    margin: 1rem 0 2rem 0;
+    color: #901C1C;
+    display: flex;
+    width: 20rem;
+}
+
+@media(max-width:1200px) {
+
+    .media-content {
+        margin: 0 auto;
+    }
+
+    .profile-card {
+        margin:0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content-img {
+        width:15rem;
+        height:15rem;
+    }
+
+    .bottom {
+        width: 15rem;
+    }
+
+}
+
 @media(max-width:800px) {
 
-    .contact-button-top {
+    .contact {
         display: none;
     }
 
     .contact-button-bottom {
         display: block;
-    }
-
-    .profileCard {
-        margin:0 auto;
-        display: flex;
     }
 
     .photographer-name {
@@ -118,4 +168,8 @@
         transform: scale(1);
     }
 
+    .content-img {
+        width:15rem;
+        height:10rem;
+    }
 }
