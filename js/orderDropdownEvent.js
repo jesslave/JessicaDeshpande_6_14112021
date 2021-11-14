@@ -1,5 +1,6 @@
 import createImage from './createImage.js'
 import createVideo from './createVideo.js'
+import createCounter from './createCounter.js';
 
 export default class orderDropdownEvent {
 
@@ -55,8 +56,12 @@ export default class orderDropdownEvent {
                 else if(media.video != null) {
                     new createVideo().createVideo(media, photographerName, mediaContent);
                 }
+                //Putting back like event
+                new createCounter().addEventAddLike();
             })
         });
+
+        
 
     }
 }

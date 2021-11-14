@@ -3,6 +3,7 @@ import createPhotographer from './createPhotographer.js'
 import redirectButton from './redirectButton.js'
 import createProfile from './createProfile.js'
 import orderDropdownEvent from './orderDropdownEvent.js'
+import createForm from './createForm.js'
 
 
 if (window.location.href.indexOf("photographer") != -1) {
@@ -11,6 +12,7 @@ if (window.location.href.indexOf("photographer") != -1) {
     let id = url.get("id");
     new createProfile().createProfileCard(data, id)
     new orderDropdownEvent().filter(data, id);
+
 
 }
 else {

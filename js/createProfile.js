@@ -2,6 +2,7 @@ import createImage from './createImage.js'
 import createVideo from './createVideo.js'
 import createCounter from './createCounter.js'
 import createSelect from './createSelect.js';
+import createForm from './createForm.js';
 
 export default class createProfile {
 
@@ -33,7 +34,7 @@ export default class createProfile {
                     `   </nav>
                     </div>
                     <div class="contact">
-                        <div class="contact-button-top"> Contactez moi </div>
+                        <div class="create-form contact-button-top"> Contactez moi </div>
                     </div>
                     <div>
                         <img class="photographer-img profile-pic" src="../medias/PhotographersIDPhotos/${photographer.portrait}" alt="${photographer.name}" />
@@ -62,6 +63,7 @@ export default class createProfile {
                     elt.appendChild(mediaSection);
 
                     new createCounter().addEventAddLike();
+
             }
 
     }
@@ -85,6 +87,8 @@ export default class createProfile {
 
         //Create the counter info bellow the page
         new createCounter().createCounter(counter, photographer.price, mainElement);
+        //Create the form
+        new createForm().createForm(photographer.name, mainElement);
 
     }
 }

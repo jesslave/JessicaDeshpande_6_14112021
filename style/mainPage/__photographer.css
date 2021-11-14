@@ -71,6 +71,7 @@
     align-items: center;
     display: none;
     font-family: 'Roboto', sans-serif;
+    cursor: pointer;
 }
 
 .profile-pic {
@@ -148,6 +149,92 @@ select > option {
 .select-text {
     margin-top: 0.5rem;
 }
+
+.background-form {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(138, 139, 148, 0.4);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.contact-form {
+    background-color: #dba092;
+    padding: 1.5rem;
+    height: fit-content;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    border-radius: 5px;
+    width: 25rem;
+}
+
+.header-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-form {
+    width: 20rem;
+    margin: 0 0 2rem 0;
+    font-weight: normal;
+    font-size: 2.5rem;
+}
+
+.close-form {
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.firstname-error, .name-error, .email-error, .msg-error {
+    color:red;
+    font-size: small;
+    display: none;
+    margin: 0;
+}
+
+.text-control {
+    width: -webkit-fill-available;
+    height: 2rem;
+    border-color: white;
+    border-radius: 5px;
+}
+
+.textarea-control {
+    width: -webkit-fill-available;
+    height: 4rem;
+    border-color: white;
+    border-radius: 5px;
+}
+
+.input-label {
+    font-size: 1.5rem;
+    color: #525252;
+}
+
+.form-data {
+    margin-top: 1rem;
+}
+
+.send-form {
+    padding: 1rem 0 1rem 0;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    width: 7rem;
+    color:white;
+    background-color: #901C1C;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
 
 
 @media(max-width:1200px) {
