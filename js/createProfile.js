@@ -38,7 +38,7 @@ export default class createProfile {
                         <div class="create-form contact-button-top"> Contactez moi </div>
                     </div>
                     <div>
-                        <img class="photographer-img profile-pic" src="../medias/PhotographersIDPhotos/${photographer.portrait}" alt="${photographer.name}" />
+                        <img class="photographer-img profile-pic" src="medias/PhotographersIDPhotos/${photographer.portrait}" alt="${photographer.name}" />
                     </div>
                 </section>`;
 

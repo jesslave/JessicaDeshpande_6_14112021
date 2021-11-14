@@ -32,7 +32,7 @@ export default class createPhotographer {
             if (currentTag == null || filteredArticle) {
             let articleTemplate = `<article class="photographer-article">
                 <a class="photographer-link" href="photographer.html?id=${photographer.id}" title="${photographer.name} profile">
-                    <img class="photographer-img" src="../medias/PhotographersIDPhotos/${photographer.portrait}" alt="${photographer.name}" />
+                    <img class="photographer-img" src="medias/PhotographersIDPhotos/${photographer.portrait}" alt="${photographer.name}" />
                     <h2>${photographer.name}</h2>
                     <p class="photographer-infos">
                     <span class="photographer-localisation">${photographer.city} ,  ${photographer.country}</span>

@@ -6,7 +6,7 @@ export default class createImage {
 
         let templateImage = `
         <article class="img-container" title="${image.title}">
-            <img class="content-img" src="../medias/`+ photographerName +`/${image.image}" alt="${image.title}" />
+            <img class="content-img" src="medias/`+ photographerName +`/${image.image}" alt="${image.title}" />
             <div class="bottom">
                 <div>${image.title}</div>
                 <div>

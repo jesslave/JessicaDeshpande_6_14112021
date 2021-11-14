@@ -3,7 +3,6 @@ import createPhotographer from './createPhotographer.js'
 import redirectButton from './redirectButton.js'
 import createProfile from './createProfile.js'
 import orderDropdownEvent from './orderDropdownEvent.js'
-import createForm from './createForm.js'
 
 
 if (window.location.href.indexOf("photographer") != -1) {
