@@ -90,10 +90,10 @@ export default class createProfile {
 
         //Create the counter info bellow the page
         new createCounter().createCounter(counter, photographer.price, mainElement);
-        //Create the form
-        new createForm().createForm(photographer.name, mainElement);
         //Create lightbox
         new createLightBox().createLightBox(mainElement);
+        //Create the form
+        new createForm().createForm(photographer.name, mainElement);
 
     }
 }
