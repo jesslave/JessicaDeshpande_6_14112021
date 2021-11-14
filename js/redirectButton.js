@@ -4,7 +4,7 @@ export default class redirectButton {
     create() {
 
         //Get main balise
-        let elt = document.getElementById('main');
+        let elt = document.querySelector('.mainClass');
 
         let button = document.createElement('span');
         button.classList.add("go-to-main")

@@ -2,7 +2,7 @@ export default class createPhotographer {
 
     createPhotographer(data) {
         //Get the main element where we will insert the profiles
-        let elt = document.getElementById('main');
+        let elt = document.querySelector('.mainClass');
 
         //Getting the current tag in the url if there is one
         let currentTag = window.location.href.split('#')[1];
@@ -31,7 +31,7 @@ export default class createPhotographer {
             //If there is no filter or if we got a filtered tag we create the article
             if (currentTag == null || filteredArticle) {
             let articleTemplate = `<article class="photographer-article">
-                <a class="photographer-link" href="#" title="${photographer.name} profile">
+                <a class="photographer-link" href="photographer.html?id=${photographer.id}" title="${photographer.name} profile">
                     <img class="photographer-img" src="../medias/PhotographersIDPhotos/${photographer.portrait}" alt="${photographer.name}" />
                     <h2>${photographer.name}</h2>
                     <p class="photographer-infos">
@@ -47,8 +47,6 @@ export default class createPhotographer {
             elt.innerHTML = elt.innerHTML + articleTemplate;
             }
         })
-
-        return this;
     }
 
 }
