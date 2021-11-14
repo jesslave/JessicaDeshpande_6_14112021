@@ -38,6 +38,14 @@
     cursor: pointer;
 }
 
+.photographer-tag-selected {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-color: #901C1C;
+    background-color: #901C1C;
+}
+
 h2 {
     color: #D3573C;
     font-size: 2rem;

@@ -42,6 +42,28 @@ main {
     transform: scale(0.9);
 }
 
+h1 {
+    margin-right: 5rem;
+}
+
+.go-to-main{
+    color:black;
+    background-color: #dba092;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    position: fixed;
+    width: 10rem;
+    top: 1rem;
+    right: 45%;
+    left: 45%;
+    text-align: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    border-radius: 10px;
+}
+
 @media(max-width:1400px) {
     header {
         display: grid;
@@ -62,7 +84,6 @@ main {
 
     h1 {
         display: none;
-        margin-right: 5rem;
     }
 
     main {
