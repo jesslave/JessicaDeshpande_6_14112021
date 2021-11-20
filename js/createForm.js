@@ -112,7 +112,16 @@ export default class createForm {
             event.target.parentElement.parentElement.style.display = "none"
 
             }
-            event.preventDefault(); 
+                event.preventDefault(); 
+        });
+
+        //Add shortcut escape to close form
+        document.addEventListener('keydown', event => {
+            if (event.key == 'Escape') {
+                document.querySelector('.background-form').style.display = "none";
+                this.resetForm();
+                this.resetErrors();
+            }
         });
     }
 

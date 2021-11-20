@@ -100,6 +100,19 @@ export default class createLightBox {
         document.querySelector('.close-lightbox').addEventListener('click', event => {
             lightBoxElement.style.display = "none"
         });
+
+        //Add shortcut arrow left and right to change element and escape to close the lightbox
+        document.addEventListener('keydown', event => {
+            if (event.key == 'ArrowRight' && nextElement != null) {
+                this.fillLightBox(nextElement.children[0]);
+            }
+            if (event.key == 'ArrowLeft' && previousElement != null) {
+                this.fillLightBox(previousElement.children[0]);
+            }
+            if (event.key == 'Escape') {
+                lightBoxElement.style.display = "none"
+            }
+        });
     }
 
 }
