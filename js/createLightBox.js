@@ -5,6 +5,7 @@ export default class createLightBox {
         //light box template
         let lightboxTemplate = `
         <div class="background-form-lightbox">
+        <div class="hiddenId"></div>
             <div class="lightbox">
                 <div class="left-div">
                     <i class="fas fa-chevron-left fa-2x"></i>
