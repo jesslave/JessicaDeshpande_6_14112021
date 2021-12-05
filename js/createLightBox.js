@@ -32,7 +32,7 @@ export default class createLightBox {
     }
 
     addLightboxEvents() {
-
+        let lightboxElement = document.querySelector(".background-form-lightbox");
         //Getting media containers
         document.querySelectorAll('.content-img').forEach(item => {
             item.addEventListener('click', event => {
@@ -41,15 +41,51 @@ export default class createLightBox {
 
             })
         })
+
+        //Trigger next lightbox element event
+        document.querySelector('.fa-chevron-right').addEventListener('click', eventLightbox => {
+            this.getNextEvent();
+        });
+
+        //Trigger previous lightbox element event
+        document.querySelector('.fa-chevron-left').addEventListener('click', eventLightbox => {
+            this.getPreviousEvent();
+        });
+
+        //Add shortcut arrow left and right to change element and escape to close the lightbox
+        document.addEventListener('keydown', event => {
+
+            if (lightboxElement.style.display == "flex") {
+                if (event.key == 'ArrowRight') {
+                    this.getNextEvent();
+                }
+                if (event.key == 'ArrowLeft') {
+                    this.getPreviousEvent();
+                }
+                if (event.key == 'Escape') {
+                    lightboxElement.style.display = "none"
+                }
+            }
+        });
+
+        //Close event
+        document.querySelector('.close-lightbox').addEventListener('click', event => {
+
+            if (lightboxElement.style.display == "flex") {
+                lightboxElement.style.display = "none"
+            }
+        });
     }
 
-    //Fill the lightbox with data from current event
+     //Fill the lightbox with data from current event
     fillLightBox(event) {
+
         //Global Elements needed
         let lightBoxElement = document.querySelector(".background-form-lightbox");
         let imgContainer = document.querySelector(".lightbox-img");
         let videoContainer = document.querySelector(".lightbox-video");
         let imgTitle = document.querySelector(".lightbox-title");
+        let currentId = document.querySelector(".hiddenId");
         //Get the media type
         let fileExtension = event.src.split('.').pop();
 
@@ -70,49 +106,27 @@ export default class createLightBox {
             videoContainer.style.display = "block";
         }
 
+        currentId.innerHTML = event.parentElement.id;
+
         //Put title
         imgTitle.innerHTML = event.parentElement.children[1].children[0].innerText;
         //Make the lightbox visible
         lightBoxElement.style.display = "flex"
 
-        let nextElement = event.parentElement.nextElementSibling;
-        let previousElement = event.parentElement.previousElementSibling;
+    }
 
-        //If there is a next element we bind it
-        if (nextElement != null) {
-            //Next event
-            document.querySelector('.fa-chevron-right').addEventListener('click', eventLightbox => {
+    getNextEvent() {
+        let idOfCurrentElement = document.querySelector(".hiddenId").innerHTML;
+        let currentElement = document.getElementById(idOfCurrentElement);
+        let nextElement = currentElement.nextElementSibling;
+        this.fillLightBox(nextElement.children[0])
+    }
 
-                this.fillLightBox(event.parentElement.nextElementSibling.children[0]);
-            });
-        }
-
-        //If there is a previous element we bind it
-        if (previousElement != null) {
-            //Next event
-            document.querySelector('.fa-chevron-left').addEventListener('click', eventLightbox => {
-
-                this.fillLightBox(event.parentElement.previousElementSibling.children[0]);
-            });
-        }
-        
-        //Close event
-        document.querySelector('.close-lightbox').addEventListener('click', event => {
-            lightBoxElement.style.display = "none"
-        });
-
-        //Add shortcut arrow left and right to change element and escape to close the lightbox
-        document.addEventListener('keydown', event => {
-            if (event.key == 'ArrowRight' && nextElement != null) {
-                this.fillLightBox(nextElement.children[0]);
-            }
-            if (event.key == 'ArrowLeft' && previousElement != null) {
-                this.fillLightBox(previousElement.children[0]);
-            }
-            if (event.key == 'Escape') {
-                lightBoxElement.style.display = "none"
-            }
-        });
+    getPreviousEvent() {
+        let idOfCurrentElement = document.querySelector(".hiddenId").innerHTML;
+        let currentElement = document.getElementById(idOfCurrentElement);
+        let previousElement = currentElement.previousElementSibling;
+        this.fillLightBox(previousElement.children[0])
     }
 
 }

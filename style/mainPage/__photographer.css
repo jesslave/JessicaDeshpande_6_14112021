@@ -288,6 +288,10 @@ select > option {
     width: 100%;
 }
 
+.hiddenId {
+    display: none;
+}
+
 
 
 @media(max-width:1200px) {

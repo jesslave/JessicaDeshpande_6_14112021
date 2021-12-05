@@ -5,7 +5,7 @@ export default class createVideo {
     createVideo(video, photographerName, mediaSection) {
 
         let templateVideo = `
-        <article class="img-container" title="${video.title}">
+        <article id="${video.id}" class="img-container" title="${video.title}">
             <video class="content-img" controls src="medias/`+ photographerName +`/${video.video}" alt="${video.title}"></video>
             <div class="bottom">
                 <div>${video.title}</div>
