@@ -57,6 +57,11 @@ export default class createProfile {
                     //We get the medias related to the photographer drom data
                     let medias = data.media.filter(x => x.photographerId == idPhotographer);
 
+                    //Filter by default => popularity
+                    medias.sort(function(a, b) {
+                        return parseFloat(b.likes) - parseFloat(a.likes);
+                    });
+
                     //Create the content inside the section
                     this.createPhotographerContent(medias, photographer, mediaSection, elt);
 
